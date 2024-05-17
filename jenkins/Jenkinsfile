@@ -1,5 +1,9 @@
 pipeline {
         agent any
+        tools {
+        // Use the correct SonarQube installation name
+        sonarqube 'SonarQubeScanner'
+    }
         stages {
          
           stage("build & SonarQube Scanner") {
