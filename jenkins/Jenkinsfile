@@ -2,14 +2,14 @@ pipeline {
         agent any
         tools {
         // Use the correct SonarQube installation name
-        sonarqube 'SonarQubeScanner'
+        SonarQube 'SonarQubeScanner'
     }
         stages {
          
           stage("build & SonarQube Scanner") {
             agent any
             steps {
-              withSonarQubeEnv('SonarQube Scanner') {
+              withSonarQubeEnv('SonarQubeScanner') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
